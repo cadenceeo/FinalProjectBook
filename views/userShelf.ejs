@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1</title>
+    <link rel="stylesheet" type="text/css" href="/css/userShelf.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"><%=user%> 's BookShelf</div>
+        <h3><%=message%></h3>
+        <div class="cards_wrap">   
+
+                <% if (typeof BookResults == 'object' && BookResults){%>
+                
+                <% BookResults.forEach( function (property) { %>
+                
+                    <div class="card_item">  
+                    <div class="card_inner">
+                        <div class="image">
+                            <% if (property.coverImagePath) { %>
+                                <img height="150" width="100" src="<%=property.coverImagePath %>">
+
+                             <% } else { %>
+                                Book Image Coming Soon...
+                            <% } %>
+                            
+                        </div>
+                        <div class="title">   
+                            Title: <%= property.title %>
+                        </div> 
+                        <div class="author">
+                            Author: <%=property.author %>
+                        </div> 
+                        <div class="summary">
+                            Summary: <%=property.summary %>
+                        </div> 
+
+                        <div>
+                            <form action = "/userShelf/remove" method= "POST" id = "rmvFav">
+                            <input type="hidden" name="_method" value="put">
+                            <input type="hidden" id="bookId" name="bookId" value=<%=property.id%>>
+                            <button type="submit">Remove From Favorites</button>
+                            </form>
+                            
+                        </div>
+                    
+                    </div>
+                    </div> 
+                <% }) %>
+
+                <% } %>
+            </div>
+    </div>
+</body>
+<footer>
+    <span class="return"><a href="home">Return to Home Page</a></span>
+</footer>
+
+</html>
