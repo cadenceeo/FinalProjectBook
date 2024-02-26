@@ -1,0 +1,77 @@
+/* Bookshelf background (brown box) */
+.bookshelf{
+    height: 600px;
+    width:400px;
+    border-radius: 5px;
+    background-color: #967969;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px #5C4033;
+}
+
+/* h1 is hard coded to test Home page and 404, will change*/
+h1{
+    position: fixed;
+    inline-size: 250px;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+
+/* Positions title field*/
+input[type=text]{
+    position: fixed;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* Positions title field*/
+textarea[type=tech]{
+    position: fixed;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* Positions home link*/
+.home {
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Positions title text over username field*/
+.recommend{
+    position: fixed;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*Positions title text over username field*/
+.tech{
+    position: fixed;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Positions and Styles Add Book Button */
+.submitbtn{
+    position: fixed;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border: none;
+    cursor: pointer;
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background-color:rgb(94, 172, 94);
+}
