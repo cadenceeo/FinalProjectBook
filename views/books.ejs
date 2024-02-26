@@ -1,0 +1,111 @@
+<!--HTML Page to test Book Model and Controller  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1</title>
+    <link rel="stylesheet" type="text/css" href="/css/books.css" />
+</head>
+<body>
+    <div class = "bookshelf">
+    <h1>Add a Book </h1>
+    <h3><%=message%></h3>
+    
+<!-- This will test out our book route on the Post command to verify the model
+and controller are functioning properly. We will add this to the home page
+for Users who have the Admin or Editor roles eventually-->
+
+
+<!-- <div class = "addBook"> -->
+
+    <form action="/books/add" method="POST" id="addbook" enctype="multipart/form-data">
+        <div class="title">
+            <label for="title"><b>Title</b></label>
+        </div>
+            <input type="title" id="title" placeholder="Enter Book Title" name="title" required>
+        
+        <div class="author">
+            <label for="author"><b>Author</b></label>
+        </div>
+            <input type="author" id="author" placeholder="Enter Book Author" name="author" required>
+
+        <div class="summary">
+            <label for="summary"><b>Summary</b></label>   
+        </div>
+
+        <textarea type="summary" id="summary" placeholder="Enter book summary here..." name="summary" required rows= "5" columns = "10"></textarea>
+
+        <div class="status">
+            <label for="status"><b>Book Status</b> </label>
+        </div>
+        <select type="status" id="status" id="status" name="status" onchange="displayOption2(this.value)">
+            <option value="rent">rent</option>
+            <option value="buy">buy</option>
+            <option value="owned">owned</option>
+        </select>
+
+        <div class="cover">
+            <label for="cover">Cover</label>
+        </div>
+        <input type="file" name="cover">
+    
+    <!-- Will need to add optional class to breakout status 
+        <div class="rent" style="display:none;">
+            <label for="availability"><b>availability</b></label>
+            <input type="text" id="availability" placeholder=""
+            
+        </div>
+    -->
+    
+        <button type="submit" class="addBookbtn">Add Book</button>
+    </form>
+
+    <!-- </div> -->
+
+    <!-- This will test our delete book route for admin use-->
+    <div class="deletebook">
+        <div class="head2">
+        <h2>Delete a Book</h2>
+        </div>
+        <form action="/books/delete" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <div class="delTitle">
+                <label for="title2"><b>Title</b></label>            
+            </div>            
+                <input type="title2" id="title2" placeholder="Enter Book Title" name="title2" required>
+
+                <button type="submit" class="delBookBtn">Delete Book</button>
+                
+        </form>
+    </div>
+
+    <!-- this will test updating an existing book in the database -->
+    <div class="updatebook" >
+        <h2>Add a photo</h2>
+        <form action="/books/update" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="put">
+            <div class="updateTitle">
+                <label for="title3"><b>Title</b></label>            
+            </div>            
+                <input type="title3" id="title3" placeholder="Enter Book Title" name="title3" required>
+
+                <div class="cover2">
+                    <label for="cover2">Cover</label>
+                </div>
+                <label class="custom">
+                <input type="file" name="cover2">
+                </label>
+                <button type="submit" class="updateBookBtn">Update Book</button>
+                
+        </form>
+    </div>
+</body>
+
+<footer>
+    <span class = "home"><a href = "home">Home</a></span>
+    <span class = "support"><a href="support">Support</a></span>
+</footer>
+</html>
