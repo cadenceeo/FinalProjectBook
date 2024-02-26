@@ -1,0 +1,36 @@
+<!-- This page is the page for users to recieve support --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1</title>
+    <link rel="stylesheet" type="text/css" href="/css/support.css" />
+</head>
+<body>
+    <div class = "bookshelf" >
+    <h1>How can we help you?</h1>
+
+    <form action="/support" method="POST" id="auth_form">
+        <div class="recommend">
+            <label for="reccomend"><b>Recommend a Book</b></label>
+        </div>
+            <input type="text" id="recommend" placeholder="Enter Book Title" name="recommend" >
+        <div class="tech">
+            <label for="tech"><b>Technical Difficulties</b></label>
+        </div>
+        <textarea type="tech" id="tech" placeholder="Enter your experience here..." name="tech" rows= "5" columns = "10"></textarea>
+
+        <button type="submit" class="submitbtn">Submit</button>
+    </form>
+
+    </div>
+</body>
+
+<footer>
+    <span class = "home"><a href = "home">Home</a></span>
+
+</footer>
+
+</html>
