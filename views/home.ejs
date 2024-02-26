@@ -1,0 +1,56 @@
+<!-- This page is the default page after login --> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css" />
+</head>
+<body>
+    <div class = "bookshelf">
+
+    <h1>Welcome <%= user %> </h1>
+
+    <!-- If there is an error message this is where it will display -->
+        <h3><%=message%></h3>
+    
+
+    <form action = "/search" method= "GET" id = "search">
+        <div class="searchText">
+            <label for="text"><b>Search for a book</b></label>
+        </div>
+        <!-- This will help determine if search is for author or title -->
+        <select type="searchOption" class="searchOption"  id="searchOption" name="searchOption" onchange="displayOption2(this.value)">
+            <option value="author">By Author</option>
+            <option value="title">By Title</option>
+        </select>
+
+        <input type="search" id="search" placeholder="Search for Books" name="search" required>
+        <button type="submit" class="srchbtn">Search</button>
+            
+        
+    </form>
+
+    <div class="or">
+        <label for="or"><b>OR</b></label>
+    </div>
+
+    <form action = "/userShelf" method = "GET" id = "shelf">
+    
+    <button type="submit" class="favorite">See <%= user %>'s Favorites</button>
+    </form>
+
+    
+    <form action="/logout" method="POST" id="logout">
+        <button type="submit" class="logoutbtn">Logout</button>
+    </form>
+
+    <span class = "support"><a href="support">Support</a></span>
+    <span class="books"><a href="books">Admin</a></span>
+    </div>
+</body>
+
+</html>
